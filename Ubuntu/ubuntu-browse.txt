@@ -5,7 +5,7 @@ REM Written by Aranym
 
 ID 046D:C339
 CTRL-ALT T
-DELAY 500
+DELAY 750
 
 STRING (firefox --new-window https://google.com &) ; exit
 ENTER
