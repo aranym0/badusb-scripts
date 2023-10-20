@@ -1,0 +1,13 @@
+REM Platform: Ubuntu (and most other GNOME distros)
+REM Description: Browse to URL and maximize Firefox
+
+REM Written by Aranym
+
+ID 046D:C339
+CTRL-ALT T
+DELAY 500
+
+STRING (firefox --new-window https://google.com &) ; exit
+ENTER
+DELAY 2500
+F11
